@@ -1,0 +1,28 @@
+﻿
+<div style="margin-top: 12vh; display: flex; align-items: center; justify-content: center; flex-direction: column">
+
+	<MudText Align="Align.Center" Typo="Typo.h4">
+		Регистрация
+	</MudText>
+
+	<div style="width: 320px">
+		<MudTextField T="string" Label="Email" Variant="Variant.Outlined" Style="" />
+		<MudTextField T="string" Label="Login" Variant="Variant.Outlined" Style="" />
+		<MudTextField T="string" Label="Password" Variant="Variant.Outlined" />
+		<MudDatePicker Variant="Variant.Outlined" @bind-Date="_birthDay" Label="Дата рождения" />
+	</div>
+
+	<div style="width: 200px; margin-top: 16px">
+		<MudButton Variant="Variant.Filled" Color="Color.Primary" Style="border-radius: 16px; height: 48px" FullWidth>
+			Регистрация
+		</MudButton>
+		<MudText Style="height: 16px">
+
+		</MudText>
+		<MudButton Variant="Variant.Outlined" Style="border-radius: 16px; height: 40px" FullWidth>
+			Вход
+		</MudButton>
+	</div>
+</div>
+
+

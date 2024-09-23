@@ -1,0 +1,81 @@
+﻿@page "/"
+
+<MudAppBar>
+
+</MudAppBar>
+
+<MudImage style="height: 28vh">
+
+</MudImage>
+
+<div class="main-container">
+	<div class="user-main-container">
+		<MudImage Src="static/images/user-image.png" Class="user-image" />
+		<MudText Style="color: white; margin-top: 12vh" Typo="Typo.h5">
+			User name
+		</MudText>
+	</div>
+    <div class="community-container">
+		<MudButton FullWidth Class="buttons" Variant="Variant.Filled" Color="Color.Primary">
+			<MudText Style="align-self: start" Typo="Typo.h6">
+                Друзья
+            </MudText>
+		</MudButton>
+		<MudButton FullWidth Class="buttons" Variant="Variant.Filled" Color="Color.Primary">
+            <MudText Style="align-self: start" Typo="Typo.h6">
+                Сообщества
+            </MudText>
+		</MudButton>
+	</div>
+</div>
+
+<style>
+    .main-container {
+        background-color: black;
+        height: 72vh;
+        width: 100vw;
+        position: relative;
+    }
+
+    .user-main-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: darkslategrey;
+        border-radius: 24px;
+        position: absolute;
+        width: 100vw;
+        top: -24px;
+        height: calc(16vh + 24px);
+    }
+
+    .user-image {
+        position: absolute;
+        width: 20vh;
+        top: -10vh;
+        border: 6px solid;
+        border-color: darkslategrey;
+        border-radius: 50%
+    }
+
+    .community-container {
+        position: absolute;
+        border-radius: 24px;
+        width: 100vw;
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+        top: 18vh;
+        background-color: darkslategrey;
+    }
+
+    .buttons {
+        border-radius: 24px;
+        display: flex;
+        flex-direction: column;
+        margin: 2vh 2vw;
+    }
+
+</style>
