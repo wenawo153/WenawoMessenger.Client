@@ -9,24 +9,55 @@
 </MudImage>
 
 <div class="main-container">
-	<div class="user-main-container">
-		<MudImage Src="static/images/user-image.png" Class="user-image" />
-		<MudText Style="color: white; margin-top: 12vh" Typo="Typo.h5">
-			User name
-		</MudText>
-	</div>
+
+    <div class="user-main-container">
+        <MudImage Src="static/images/user-image.png" Class="user-image" />
+        <MudText Style="color: white; margin-top: 10vh" Typo="Typo.h5">
+            User name
+        </MudText>
+    </div>
+
     <div class="community-container">
-		<MudButton FullWidth Class="buttons" Variant="Variant.Filled" Color="Color.Primary">
-			<MudText Style="align-self: start" Typo="Typo.h6">
+        <MudButton Style="justify-content: right; border-radius: 20px 0 0 20px" FullWidth Class="buttons" Variant="Variant.Outlined" Color="Color.Default">
+            <MudText Style="margin: 0 auto 0 1vw" Class="text-count" Typo="Typo.body1">
+                1234
+            </MudText>
+            <MudText Typo="Typo.body1">
                 Друзья
             </MudText>
-		</MudButton>
-		<MudButton FullWidth Class="buttons" Variant="Variant.Filled" Color="Color.Primary">
-            <MudText Style="align-self: start" Typo="Typo.h6">
+        </MudButton>
+        <div style="background-color: #7c7a77; height: 8vh; width: 2px; margin-top: 1vh" />
+        <MudButton Style="justify-content: left; border-radius: 0 20px 20px 0" FullWidth Class="buttons" Variant="Variant.Outlined" Color="Color.Default">
+            <MudText Typo="Typo.body1">
                 Сообщества
             </MudText>
-		</MudButton>
-	</div>
+            <MudText Style="margin: 0 1vw 0 auto" Class="text-count" Typo="Typo.body1">
+                1234
+            </MudText>
+        </MudButton>
+    </div>
+
+    <div class="gallery-container">
+        <div class="gallery">
+            <MudImage Src="static/images/empty-image.png" Class="gallery-image" />
+            <MudImage Src="static/images/empty-image.png" Class="gallery-image" />
+            <MudImage Src="static/images/empty-image.png" Class="gallery-image" />
+        </div>
+        <div style="background-color: #7c7a77; width: 90vw; height: 1px; margin-top: 2vh" />
+        <div class="buttons-gallery">
+            <MudButton StartIcon="@Icons.Material.Filled.Add" FullWidth Variant="Variant.Text" Style="height: calc(7vh + 6px); color: white; border-radius: 0 0 0 24px">
+                Добавить
+            </MudButton>
+            <div style="background-color: #7c7a77; height: 6vh; width: 2px; margin-top: 1vh" />
+            <MudButton EndIcon="@Icons.Material.Filled.ArrowForward" FullWidth Variant="Variant.Text" Style="height: calc(7vh + 6px); color: white; border-radius: 0 0 24px 0">
+                Посмотреть всё
+            </MudButton>
+        </div>
+    </div>
+
+@*         <div class="description-container">
+    </div> *@
+
 </div>
 
 <style>
@@ -51,7 +82,7 @@
 
     .user-image {
         position: absolute;
-        width: 20vh;
+        width: 16vh;
         top: -10vh;
         border: 6px solid;
         border-color: darkslategrey;
@@ -67,15 +98,68 @@
         flex-direction: row;
         align-content: center;
         justify-content: center;
-        top: 18vh;
+        top: 17vh;
         background-color: darkslategrey;
     }
 
     .buttons {
-        border-radius: 24px;
-        display: flex;
-        flex-direction: column;
         margin: 2vh 2vw;
+        color: white;
+        border-color: #7c7a77
+    }
+
+    .text-count {
+        background-color: white;
+        color: black;
+        padding: 4px 8px;
+        border-radius: 16px
+    }
+
+    .gallery-container {
+        top: 28vh;
+        height: 24vh;
+        width: 100vw;
+        background-color: darkslategrey;
+        border-radius: 24px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .gallery {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        border: 1px solid;
+        border-color: #7c7a77;
+        border-radius: 24px;
+        padding: 1vh 4vw;
+        margin-top: 2vh
+    }
+
+    .gallery-image {
+        width: 10vh;
+        margin: 0 2vw
+    }
+
+    .buttons-gallery {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100vw;
+        color: white;
+    }
+
+    .description-container {
+        height: 20vh;
+        top: 48vh;
+        width: 100vw;
+        background-color: darkslategrey;
+        border-radius: 24px;
+        position: absolute
     }
 
 </style>
