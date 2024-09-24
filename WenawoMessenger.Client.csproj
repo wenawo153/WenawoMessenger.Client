@@ -70,10 +70,6 @@
       <Folder Include="Components\Pages\NotificationPage\" />
     </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="MessengerClassLibraly\MessengerClassLibraly.csproj" />
-    </ItemGroup>
-
     <ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionWenawoMessengerClientHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
 </Project>
