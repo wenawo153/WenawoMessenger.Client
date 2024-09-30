@@ -1,165 +1,121 @@
 ﻿@page "/"
 
-<MudAppBar>
+
+<MudAppBar Fixed="false">
 
 </MudAppBar>
 
-<MudImage style="height: 28vh">
+<MudImage style="height: 20vh">
 
 </MudImage>
 
 <div class="main-container">
+	<div style="position: relative; top: -24px; offset: 0;  gap: 1vh; display: flex; flex-direction: column; width: 100vw">
 
-    <div class="user-main-container">
-        <MudImage Src="static/images/user-image.png" Class="user-image" />
-        <MudText Style="color: white; margin-top: 10vh" Typo="Typo.h5">
-            User name
-        </MudText>
-    </div>
+		<div class="user-main-container">
+			<MudImage Src="static/images/user-image.png" Class="user-image" />
+			<MudText Style="color: white; margin-top: 8vh" Typo="Typo.h5">
+				User name
+			</MudText>
+		</div>
 
-    <div class="community-container">
-        <MudButton Style="justify-content: right; border-radius: 20px 0 0 20px" FullWidth Class="buttons" Variant="Variant.Outlined" Color="Color.Default">
-            <MudText Style="margin: 0 auto 0 1vw" Class="text-count" Typo="Typo.body1">
-                1234
-            </MudText>
-            <MudText Typo="Typo.body1">
-                Друзья
-            </MudText>
-        </MudButton>
-        <div style="background-color: #7c7a77; height: 8vh; width: 2px; margin-top: 1vh" />
-        <MudButton Style="justify-content: left; border-radius: 0 20px 20px 0" FullWidth Class="buttons" Variant="Variant.Outlined" Color="Color.Default">
-            <MudText Typo="Typo.body1">
-                Сообщества
-            </MudText>
-            <MudText Style="margin: 0 1vw 0 auto" Class="text-count" Typo="Typo.body1">
-                1234
-            </MudText>
-        </MudButton>
-    </div>
+		<div class="community-container">
+			<MudButton Style="justify-content: right; border-radius: 20px 0 0 20px" FullWidth Class="button" Variant="Variant.Outlined" Color="Color.Default">
+				<MudText Style="margin: 0 auto 0 1vw" Class="text-count" Typo="Typo.body1">
+					1234
+				</MudText>
+				<MudText Typo="Typo.body1">
+					Друзья
+				</MudText>
+			</MudButton>
+			<div style="background-color: #7c7a77; height: 8vh; width: 2px; margin-top: 1vh" />
+			<MudButton Style="justify-content: left; border-radius: 0 20px 20px 0" FullWidth Class="button" Variant="Variant.Outlined" Color="Color.Default">
+				<MudText Typo="Typo.body1">
+					Сообщества
+				</MudText>
+				<MudText Style="margin: 0 1vw 0 auto" Class="text-count" Typo="Typo.body1">
+					1234
+				</MudText>
+			</MudButton>
+		</div>
 
-    <div class="gallery-container">
-        <div class="gallery">
-            <MudImage Src="static/images/empty-image.png" Class="gallery-image" />
-            <MudImage Src="static/images/empty-image.png" Class="gallery-image" />
-            <MudImage Src="static/images/empty-image.png" Class="gallery-image" />
-        </div>
-        <div style="background-color: #7c7a77; width: 90vw; height: 1px; margin-top: 2vh" />
-        <div class="buttons-gallery">
-            <MudButton StartIcon="@Icons.Material.Filled.Add" FullWidth Variant="Variant.Text" Style="height: calc(7vh + 6px); color: white; border-radius: 0 0 0 24px">
-                Добавить
-            </MudButton>
-            <div style="background-color: #7c7a77; height: 6vh; width: 2px; margin-top: 1vh" />
-            <MudButton EndIcon="@Icons.Material.Filled.ArrowForward" FullWidth Variant="Variant.Text" Style="height: calc(7vh + 6px); color: white; border-radius: 0 0 24px 0">
-                Посмотреть всё
-            </MudButton>
-        </div>
-    </div>
+		<div class="gallery-container">
+			<div class="gallery">
+				<MudImage Src="static/images/empty-image.png" Class="gallery-image" />
+				<MudImage Src="static/images/empty-image.png" Class="gallery-image" />
+				<MudImage Src="static/images/empty-image.png" Class="gallery-image" />
+			</div>
+			<div style="display: flex; flex-direction: column; align-items: center; margin-top: auto; margin-bottom: 0">
+				<MudDivider FlexItem />
+				<div class="buttons">
+					<MudButton StartIcon="@Icons.Material.Filled.Add" FullWidth Variant="Variant.Text" Style="height: calc(7vh + 6px); color: white; border-radius: 0 0 0 24px">
+						Добавить
+					</MudButton>
+					<MudDivider Vertical FlexItem />
+					<MudButton EndIcon="@Icons.Material.Filled.ArrowForward" FullWidth Variant="Variant.Text" Style="height: calc(7vh + 6px); color: white; border-radius: 0 0 24px 0">
+						Посмотреть всё
+					</MudButton>
+				</div>
+			</div>
+		</div>
 
-@*         <div class="description-container">
-    </div> *@
+		<div class="titles-container">
+			<div class="buttons">
+				<MudButton StartIcon="@Icons.Material.Filled.Add" FullWidth Variant="Variant.Text" Style="height: calc(7vh + 6px); color: white; border-radius: 0 0 0 24px">
+					Добавить
+				</MudButton>
+				<MudDivider Vertical FlexItem />
+				<MudButton EndIcon="@Icons.Material.Filled.ArrowForward" FullWidth Variant="Variant.Text" Style="height: calc(7vh + 6px); color: white; border-radius: 0 0 24px 0">
+					Посмотреть всё
+				</MudButton>
+			</div>
+			<MudDivider FlexItem />
+
+			@if (false)
+			{
+
+			}
+			else
+			{
+				<MudImage Style="width: 32vh" Src="static/images/wall_edit_white.png" />
+				<MudText Style="color: white" Typo="Typo.h6">
+					У вас пока нет записей
+				</MudText>
+			}
+		</div>
+	</div>
 
 </div>
 
 <style>
-    .main-container {
-        background-color: black;
-        height: 72vh;
-        width: 100vw;
-        position: relative;
-    }
 
-    .user-main-container {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        background-color: darkslategrey;
-        border-radius: 24px;
-        position: absolute;
-        width: 100vw;
-        top: -24px;
-        height: calc(16vh + 24px);
-    }
+	.user-image {
+		position: absolute;
+		width: 16vh;
+		top: -8vh;
+		border: 6px solid;
+		border-color: darkslategrey;
+		border-radius: 50%;
+		background-color: darkslategrey
+	}
 
-    .user-image {
-        position: absolute;
-        width: 16vh;
-        top: -10vh;
-        border: 6px solid;
-        border-color: darkslategrey;
-        border-radius: 50%
-    }
+	.button {
+		margin: 2vh 2vw;
+		color: white;
+		border-color: #7c7a77
+	}
 
-    .community-container {
-        position: absolute;
-        border-radius: 24px;
-        width: 100vw;
-        height: 10vh;
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-        justify-content: center;
-        top: 17vh;
-        background-color: darkslategrey;
-    }
+	.text-count {
+		background-color: white;
+		color: black;
+		padding: 4px 8px;
+		border-radius: 16px
+	}
 
-    .buttons {
-        margin: 2vh 2vw;
-        color: white;
-        border-color: #7c7a77
-    }
-
-    .text-count {
-        background-color: white;
-        color: black;
-        padding: 4px 8px;
-        border-radius: 16px
-    }
-
-    .gallery-container {
-        top: 28vh;
-        height: 24vh;
-        width: 100vw;
-        background-color: darkslategrey;
-        border-radius: 24px;
-        position: absolute;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    .gallery {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-        border: 1px solid;
-        border-color: #7c7a77;
-        border-radius: 24px;
-        padding: 1vh 4vw;
-        margin-top: 2vh
-    }
-
-    .gallery-image {
-        width: 10vh;
-        margin: 0 2vw
-    }
-
-    .buttons-gallery {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        width: 100vw;
-        color: white;
-    }
-
-    .description-container {
-        height: 20vh;
-        top: 48vh;
-        width: 100vw;
-        background-color: darkslategrey;
-        border-radius: 24px;
-        position: absolute
-    }
+	.gallery-image {
+		width: 10vh;
+		margin: 0 2vw;
+		border-radius: 8px;
+	}
 
 </style>
