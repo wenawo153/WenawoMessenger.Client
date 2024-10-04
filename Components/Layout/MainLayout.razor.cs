@@ -8,5 +8,6 @@ namespace WenawoMessenger.Client.Components.Layout
 {
     partial class MainLayout
     {
-    }
+
+	}
 }

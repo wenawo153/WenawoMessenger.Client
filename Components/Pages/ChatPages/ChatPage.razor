@@ -1,0 +1,87 @@
+﻿@page "/"
+
+<MudAppBar Elevation="1">
+	<MudIconButton OnClick="Scroll" Class="onclick-white" Icon="@Icons.Material.Filled.ArrowBack" Color="Color.Inherit" Edge="Edge.Start" />
+	<MudSpacer />
+	<MudIconButton Class="onclick-white" Icon="@Icons.Material.Filled.Search" Color="Color.Inherit" Edge="Edge.End" />
+</MudAppBar>
+
+<div class="navbar-spacer" />
+
+<MudList T="Messege" Class="messege-container content-no-navbar">
+	@foreach (Messege messege in messeges)
+	{
+		@if (messege.UserId == myId)
+		{
+			<MudListItem>
+				<AvatarContent>
+					<MudAvatar>
+						<MudIcon Icon="@Icons.Material.Filled.Work" Color="Color.Primary" />
+					</MudAvatar>
+				</AvatarContent>
+				<ChildContent>
+					@messege.Content
+				</ChildContent>
+			</MudListItem>
+		}
+		else
+		{
+			<MudListItem>
+				<AvatarContent>
+					<MudAvatar>
+						<MudIcon Icon="@Icons.Material.Filled.Work" Color="Color.Primary" />
+					</MudAvatar>
+				</AvatarContent>
+				<ChildContent>
+					@messege.Content
+				</ChildContent>
+			</MudListItem>
+		}
+	}
+</MudList>
+<div id="scroll" Style="height: 52px; background-color: transparent" />
+
+<div class="write-container">
+	<MudIconButton class="button" Style="transform: rotate(45deg)" Icon="@Icons.Material.Filled.AttachFile" />
+	<MudInput Class="input" Variant="Variant.Filled" T="string" Underline="false" Placeholder="Введите сообщение" />
+	<MudIconButton Class="button" Icon="@Icons.Material.Filled.Send" />
+</div>
+
+<style>
+
+	.messege-container {
+		display: flex;
+		flex-direction: column-reverse
+	}
+
+	.write-container {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		height: 56px;
+		display: flex;
+		align-content: center;
+		flex-direction: row;
+		background-color: darkslategrey
+	}
+
+		.write-container > .input {
+			border-radius: 24px;
+			padding: 0 !important;
+			color: black !important;
+			background-color: white !important;
+			width: 90vw;
+			height: 44px;
+			margin-top: 6px
+		}
+		
+		.write-container > .button{
+			margin: 0 4px 0 4px;
+			color: white !important
+		}
+
+	.mud-input > input.mud-input-root.mud-input-root-filled, div.mud-input-slot.mud-input-root.mud-input-root-filled {
+		padding: 0 0 0 12px;
+	}
+
+</style>

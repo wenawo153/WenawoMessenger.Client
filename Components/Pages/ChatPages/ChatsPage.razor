@@ -1,0 +1,105 @@
+
+<MudSwipeArea OnSwipeEnd="@OnSwipeEnd" Style="width: 100%;">
+	<MudLayout>
+		<MudAppBar Elevation="1">
+			<MudIconButton Class="onclick-white" OnClick="@ToggleDrawer" Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" />
+			<MudSpacer />
+			<MudIconButton Class="onclick-white" Icon="@Icons.Material.Filled.Search" Color="Color.Inherit" Edge="Edge.End" />
+		</MudAppBar>
+
+		<div class="navbar-spacer" />
+
+		<MudDrawer Width="80vw" Variant="@DrawerVariant.Temporary" OverlayAutoClose @bind-Open="@_open" Elevation="1" Class="drawer">
+			<MudDrawerHeader Class="navbar-header">
+				<MudImage Src="static/images/user-image.png" Class="navbar-image noselect" />
+				<MudText Class="noselect" Style="color: white ;margin-left: 4vw; margin-top: 1vh" Typo="Typo.h6">User name</MudText>
+			</MudDrawerHeader>
+			<MudNavMenu>
+				<MudDivider />
+				<MudNavLink Class="navbar-button onclick-white noselect" Match="NavLinkMatch.All">
+					<MudText Typo="Typo.body1">Мой профиль</MudText>
+				</MudNavLink>
+				<MudDivider />
+				<MudNavLink Class="navbar-button onclick-white noselect" Match="NavLinkMatch.All">
+					<MudText Typo="Typo.body1">Друзья</MudText>
+				</MudNavLink>
+				<MudNavLink Class="navbar-button onclick-white noselect" Match="NavLinkMatch.All">
+					<MudText Typo="Typo.body1">Сообщества</MudText>
+				</MudNavLink>
+				<MudDivider />
+				<MudNavLink Class="navbar-button onclick-white noselect" Match="NavLinkMatch.All">
+					<MudText Typo="Typo.body1">Галлерея</MudText>
+				</MudNavLink>
+				<MudNavLink Class="navbar-button onclick-white noselect" Match="NavLinkMatch.All">
+					<MudText Typo="Typo.body1">Избранное</MudText>
+				</MudNavLink>
+				<MudDivider />
+				<MudNavLink Class="navbar-button onclick-white noselect" Match="NavLinkMatch.All">
+					<MudText Typo="Typo.body1">Настройки</MudText>
+				</MudNavLink>
+				<MudNavLink Class="navbar-button onclick-white noselect" Match="NavLinkMatch.All">
+					<MudText Typo="Typo.body1">Безопасноть</MudText>
+				</MudNavLink>
+			</MudNavMenu>
+		</MudDrawer>
+
+		<MudMainContent Style="padding: 0 !important" Class="content-no-navbar">
+			<MudList T="ListItemContent">
+				@foreach (ListItemContent item in listItems)
+				{
+					<MudListItem Class="onclick-black" Style="background-color: gray">
+						<AvatarContent>
+							<MudAvatar>
+								<MudImage Src=@item.ChatAvatarLink />
+							</MudAvatar>
+						</AvatarContent>
+						<ChildContent>
+							<div>
+								<MudText Style="color: white" Typo="Typo.h6">
+									@item.ChatName
+								</MudText>
+								<MudText Typo="Typo.body2">
+									@item.LastMessege
+								</MudText>
+							</div>
+						</ChildContent>
+					</MudListItem>
+					<MudDivider />
+				}
+			</MudList>
+			<div style="height: 8vh" />
+			<MudText Class="noselect" Typo="Typo.body1" Style="position: absolute; bottom: 4vh; right: 12vh"> Начните новое общение -> </MudText>
+			<MudFab Style="position: fixed; bottom: 2vh; right: 2vh; width: 8vh; height: 8vh" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" />
+		</MudMainContent>
+	</MudLayout>
+</MudSwipeArea>
+
+<style>
+
+	.drawer {
+		background-color: #38342e
+	}
+
+	.navbar-header {
+		border-radius: 24px;
+		margin: 1vh 0.5vw
+	}
+
+	.navbar-button {
+		height: 60px
+	}
+
+	.mud-navmenu.mud-navmenu-default .mud-nav-link.active:not(.mud-nav-link-disabled) {
+		height: 100%;
+		color: white !important;
+		align-items: center;
+		background-color: #0805002c;
+		font-size: 16px
+	}
+
+	.navbar-image {
+		border-radius: 50%;
+		width: 8vh;
+	}
+
+</style>

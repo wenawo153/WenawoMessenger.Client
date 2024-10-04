@@ -1,0 +1,75 @@
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.onclick-black {
+}
+
+    .onclick-black:active {
+        transition: 0s;
+        background-color: #000000c2 !important
+    }
+
+    .onclick-black:not(:active) {
+        transition: 0.6s;
+    }
+
+
+.onclick-white {
+}
+
+    .onclick-white:active {
+        transition: 0s;
+        background-color: #ffffff6c !important
+    }
+
+    .onclick-white:not(:active) {
+        transition: 0.6s;
+    }
+
+
+.navbar-spacer {
+    height: var(--mud-appbar-height)
+}
+
+.content-no-navbar {
+    min-height: calc(100vh - var(--mud-appbar-height))
+}
+
+@media (min-width: 641px) {
+
+    .onclick-white:hover {
+        transition: 0.4s;
+        background-color: #ffffff1b !important
+    }
+
+    .onclick-white:not(:hover) {
+        transition: 0.4s;
+    }
+
+
+    .onclick-black:hover {
+        transition: 0.4s;
+        background-color: #000000a6 !important
+    }
+
+    .onclick-black:not(:hover) {
+        transition: 0.4s;
+    }
+}
+
+@media (max-width: 640.98px) {
+
+    .navbar-spacer {
+        height: calc(var(--mud-appbar-height) - var(--mud-appbar-height)/8)
+    }
+
+    .content-no-navbar {
+        min-height: calc(100vh - calc(var(--mud-appbar-height) - var(--mud-appbar-height)/8))
+    }
+}
