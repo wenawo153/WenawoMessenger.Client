@@ -1,4 +1,7 @@
-﻿namespace WenawoMessenger.Client
+﻿using Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;
+using Application = Microsoft.Maui.Controls.Application;
+
+namespace WenawoMessenger.Client
 {
     public partial class App : Application
     {
@@ -7,6 +10,6 @@
             InitializeComponent();
 
             MainPage = new MainPage();
-        }
-    }
+		}
+	}
 }

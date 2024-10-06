@@ -6,147 +6,43 @@ namespace WenawoMessenger.Client.Components.Pages.ChatPages
 	public partial class ChatPage
 	{
 		[Inject] private IJSRuntime? _jSRuntime { get; set; }
+		public int priviousMessegeId;
+		public int firstMessegeId;
+		public int myId = 1;
+		public List<Messege> messeges = new List<Messege>();
 
-		public async void Scroll()
+		protected override Task OnInitializedAsync()
 		{
-			await _jSRuntime!.InvokeVoidAsync("scrollToBottom");
+			Random rnd = new Random();
+			for (int i = 0; i < 6; i++)
+			{
+				messeges.Add(new Messege()
+				{
+					Id = i,
+					UserId = rnd.Next(1, 3),
+					Content = "hello"
+				});
+			}
+
+			firstMessegeId = messeges.First().Id;
+			priviousMessegeId = messeges.First().UserId;
+			StateHasChanged();
+			return base.OnInitializedAsync();
 		}
 
 		protected override async Task OnAfterRenderAsync(bool firstRender)
 		{
-			await _jSRuntime!.InvokeVoidAsync("scrollToBottom");
+			if (firstRender)
+			{
+				await _jSRuntime!.InvokeVoidAsync("scrollToBottom");
+			}
 		}
-
-		static public int myId = 1;
-
-		public List<Messege> messeges = new()
-		{
-			new()
-			{
-				UserId = 1,
-				Content = "hello1"
-			},
-			new()
-			{
-				UserId = 1,
-				Content = "hello2"
-			},
-			new()
-			{
-				UserId = 2,
-				Content = "hello3"
-			},
-			new()
-			{
-				UserId = 2,
-				Content = "hello4"
-			},
-			new()
-			{
-				UserId = 2,
-				Content = "hello5"
-			},
-			new()
-			{
-				UserId = 1,
-				Content = "hello6"
-			},
-			new()
-			{
-				UserId = 2,
-				Content = "hello7"
-			},
-			new()
-			{
-				UserId = 1,
-				Content = "hello8"
-			},
-			new()
-			{
-				UserId = 1,
-				Content = "hello9"
-			},
-			new()
-			{
-				UserId = 1,
-				Content = "hello10"
-			},
-			new()
-			{
-				UserId = 1,
-				Content = "hello11"
-			},
-			new()
-			{
-				UserId = 2,
-				Content = "hello12"
-			},
-			new()
-			{
-				UserId = 1,
-				Content = "hello1"
-			},
-			new()
-			{
-				UserId = 1,
-				Content = "hello2"
-			},
-			new()
-			{
-				UserId = 2,
-				Content = "hello3"
-			},
-			new()
-			{
-				UserId = 2,
-				Content = "hello4"
-			},
-			new()
-			{
-				UserId = 2,
-				Content = "hello5"
-			},
-			new()
-			{
-				UserId = 1,
-				Content = "hello6"
-			},
-			new()
-			{
-				UserId = 2,
-				Content = "hello7"
-			},
-			new()
-			{
-				UserId = 1,
-				Content = "hello8"
-			},
-			new()
-			{
-				UserId = 1,
-				Content = "hello9"
-			},
-			new()
-			{
-				UserId = 1,
-				Content = "hello10"
-			},
-			new()
-			{
-				UserId = 1,
-				Content = "hello11"
-			},
-			new()
-			{
-				UserId = 2,
-				Content = "hello12"
-			},
-		};
 
 	}
 
 	public class Messege
 	{
+		public int Id { get; set; }
 		public string Content { get; set; } = null!;
 		public int UserId { get; set; }
 	}
