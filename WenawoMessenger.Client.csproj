@@ -73,10 +73,6 @@
       <Folder Include="WebSocket\" />
     </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\MessengerClientClassLibraly\MessengerClientClassLibraly.csproj" />
-    </ItemGroup>
-
     <ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionWenawoMessengerClientHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
 </Project>
