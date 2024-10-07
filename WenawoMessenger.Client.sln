@@ -5,7 +5,7 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WenawoMessenger.Client", "WenawoMessenger.Client.csproj", "{C845289C-C988-4142-8670-B0EB0272BF9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessengerClientClassLibraly", "..\MessengerClientClassLibraly\MessengerClientClassLibraly.csproj", "{1A3965F5-3D18-4C1D-B8CD-EC50595198A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessengerClientClassLibraly", "..\MessengerClientClassLibraly\MessengerClientClassLibraly.csproj", "{D71EC392-2E78-4105-B339-38AED4DD19B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,10 @@ Global
 		{C845289C-C988-4142-8670-B0EB0272BF9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C845289C-C988-4142-8670-B0EB0272BF9B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C845289C-C988-4142-8670-B0EB0272BF9B}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{1A3965F5-3D18-4C1D-B8CD-EC50595198A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1A3965F5-3D18-4C1D-B8CD-EC50595198A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1A3965F5-3D18-4C1D-B8CD-EC50595198A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1A3965F5-3D18-4C1D-B8CD-EC50595198A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D71EC392-2E78-4105-B339-38AED4DD19B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D71EC392-2E78-4105-B339-38AED4DD19B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D71EC392-2E78-4105-B339-38AED4DD19B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D71EC392-2E78-4105-B339-38AED4DD19B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

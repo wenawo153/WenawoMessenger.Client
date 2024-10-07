@@ -58,6 +58,9 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="Flurl" Version="4.0.0" />
+        <PackageReference Include="Flurl.Http" Version="4.0.2" />
+        <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
         <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.90" />
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.90" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="8.0.90" />
@@ -67,6 +70,11 @@
 
     <ItemGroup>
       <Folder Include="Components\Pages\NotificationPage\" />
+      <Folder Include="WebSocket\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\MessengerClientClassLibraly\MessengerClientClassLibraly.csproj" />
     </ItemGroup>
 
     <ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionWenawoMessengerClientHideInfoBar="True" /></VisualStudio></ProjectExtensions>

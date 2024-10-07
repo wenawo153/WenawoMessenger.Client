@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using MudBlazor.Services;
+using WenawoMessenger.Client.HttpClient;
 
 namespace WenawoMessenger.Client
 {
@@ -22,6 +23,22 @@ namespace WenawoMessenger.Client
             builder.Services.AddBlazorWebViewDeveloperTools();
     		builder.Logging.AddDebug();
 #endif
+
+            #region HttpClient
+
+            builder.Services.Configure<HttpConfig>(builder.Configuration.GetSection("HttpUrl"));
+
+            #endregion
+
+            #region WebSoket
+
+            #endregion
+
+            #region Singleton
+
+            #endregion
+
+
 
             return builder.Build();
         }
