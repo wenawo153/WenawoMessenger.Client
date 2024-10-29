@@ -44,9 +44,10 @@
         <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 
         <!-- Splash Screen -->
-        <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+        <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="White" TintColor="Orange" />
 
-        <!-- Images -->
+
+		<!-- Images -->
         <MauiImage Include="Resources\Images\*" />
         <MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
 
@@ -58,21 +59,38 @@
     </ItemGroup>
 
     <ItemGroup>
+      <None Remove="Resources\Splash\splash.svg" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
         <PackageReference Include="Flurl" Version="4.0.0" />
         <PackageReference Include="Flurl.Http" Version="4.0.2" />
+        <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.10" />
+        <PackageReference Include="Microsoft.AspNetCore.SignalR.Client.Core" Version="8.0.10" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.2" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
         <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
         <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.90" />
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.90" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="8.0.90" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
         <PackageReference Include="MudBlazor" Version="7.8.0" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.1.2" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Components\Pages\NotificationPage\" />
-      <Folder Include="WebSocket\" />
     </ItemGroup>
 
+	<ItemGroup>
+		<EmbeddedResource Include="appsettings.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+	</ItemGroup>
+	
+	
     <ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionWenawoMessengerClientHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
 </Project>

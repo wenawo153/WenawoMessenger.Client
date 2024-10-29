@@ -6,6 +6,7 @@ namespace WenawoMessenger.Client.Components.Pages.ChatPages
 	public partial class ChatPage
 	{
 		[Inject] private IJSRuntime? _jSRuntime { get; set; }
+
 		public int priviousMessegeId;
 		public int firstMessegeId;
 		public int myId = 1;

@@ -1,23 +1,31 @@
-﻿
+﻿@page "/login"
+
 <div style="margin-top: 20vh; display: flex; align-items: center; justify-content: center; flex-direction: column">
 
 	<MudText Align="Align.Center" Typo="Typo.h4">
 		Вход
-	</MudText>		
+	</MudText>
 
 	<div style="width: 320px">
-		<MudTextField T="string" Label="Email" Variant="Variant.Outlined" />
-		<MudTextField T="string" Label="Password" Variant="Variant.Outlined" />
+		<MudTextField T="string" @onclick="() => ErrorCancel(textFieldStatus[0], textFieldStatus)" Label="@textFieldStatus[0].Label" @bind-Value="email" Error="@textFieldStatus[0].Errored" Variant="Variant.Outlined" />
+		<MudTextField T="string" @onclick="() => ErrorCancel(textFieldStatus[1], textFieldStatus)" Label="@textFieldStatus[1].Label" @bind-Value="password" Error="@textFieldStatus[1].Errored" Variant="Variant.Outlined" />
 	</div>
 
-	<div style="width: 200px; margin-top: 16px">
-		<MudButton Variant="Variant.Filled" Color="Color.Primary" Style="border-radius: 16px; height: 48px" FullWidth>
+	<div style="width: 200px; margin-top: 16px; display: flex; flex-direction: column; align-items: center">
+		<MudButton Variant="Variant.Filled" OnClick="(() => Login(email, password))" Color="Color.Primary" Style="border-radius: 16px; height: 48px" FullWidth>
 			Вход
 		</MudButton>
-		<MudText Style="height: 16px">
-
-		</MudText>
-		<MudButton Variant="Variant.Outlined" Style="border-radius: 16px; height: 40px" FullWidth>
+		@if (errorMessege != string.Empty)
+		{
+			<MudText Style="height: 16px; padding: 4px; padding-top: 8px; padding-bottom: 32px; color: red">
+				@errorMessege
+			</MudText>
+		}
+		else
+		{
+			<div style="height: 16px" />
+		}
+		<MudButton Variant="Variant.Outlined" OnClick="GoToRegisration" Style="border-radius: 16px; height: 40px" FullWidth>
 			Регистрация
 		</MudButton>
 	</div>

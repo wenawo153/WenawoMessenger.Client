@@ -1,3 +1,6 @@
+@page "/chats"
+
+@inject IDialogService DialogService
 
 <MudSwipeArea OnSwipeEnd="@OnSwipeEnd" Style="width: 100%;">
 	<MudLayout>
@@ -13,6 +16,7 @@
 			<MudDrawerHeader Class="navbar-header">
 				<MudImage Src="static/images/user-image.png" Class="navbar-image noselect" />
 				<MudText Class="noselect" Style="color: white ;margin-left: 4vw; margin-top: 1vh" Typo="Typo.h6">User name</MudText>
+				<MudIconButton Icon="@Icons.Material.Filled.ExitToApp" OnClick="OpenExitDialogAsync" Style="margin: auto 0 auto auto; color: white" />
 			</MudDrawerHeader>
 			<MudNavMenu>
 				<MudDivider />
@@ -100,6 +104,11 @@
 	.navbar-image {
 		border-radius: 50%;
 		width: 8vh;
+	}
+
+	.mud-nav-link {
+		align-items: center;
+		color: white
 	}
 
 </style>

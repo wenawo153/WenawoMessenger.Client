@@ -1,4 +1,5 @@
-﻿
+﻿@page "/registration"
+
 <div style="margin-top: 12vh; display: flex; align-items: center; justify-content: center; flex-direction: column">
 
 	<MudText Align="Align.Center" Typo="Typo.h4">
@@ -6,23 +7,28 @@
 	</MudText>
 
 	<div style="width: 320px">
-		<MudTextField T="string" Label="Email" Variant="Variant.Outlined" Style="" />
-		<MudTextField T="string" Label="Login" Variant="Variant.Outlined" Style="" />
-		<MudTextField T="string" Label="Password" Variant="Variant.Outlined" />
-		<MudDatePicker Variant="Variant.Outlined" @bind-Date="_birthDay" Label="Дата рождения" />
+		<MudTextField T="string" @onclick="() => ErrorCancel(textFieldStatus[0], textFieldStatus)" Label="@textFieldStatus[0].Label" Error="@textFieldStatus[0].Errored" @bind-Value="email" Variant="Variant.Outlined" />
+		<MudTextField T="string" @onclick="() => ErrorCancel(textFieldStatus[1], textFieldStatus)" Label="@textFieldStatus[1].Label" Error="@textFieldStatus[1].Errored" @bind-Value="login" Variant="Variant.Outlined" />
+		<MudTextField T="string" @onclick="() => ErrorCancel(textFieldStatus[2], textFieldStatus)" Label="@textFieldStatus[2].Label" Error="@textFieldStatus[2].Errored" @bind-Value="password" Variant="Variant.Outlined" />
+		<MudDatePicker Variant="Variant.Outlined" @onclick="() => ErrorCancel(textFieldStatus[3], textFieldStatus)" 
+			@bind-Date="dateTime" Label="@textFieldStatus[3].Label" Error="textFieldStatus[3].Errored" />
 	</div>
 
 	<div style="width: 200px; margin-top: 16px">
-		<MudButton Variant="Variant.Filled" Color="Color.Primary" Style="border-radius: 16px; height: 48px" FullWidth>
+		<MudButton Variant="Variant.Filled" OnClick="(() => Registration(email, login, password, dateTime))" Color="Color.Primary" Style="border-radius: 16px; height: 48px" FullWidth>
 			Регистрация
 		</MudButton>
-		<MudText Style="height: 16px">
-
+		<MudText Style="height: 16px; color: red">
+			@errorMessege
 		</MudText>
-		<MudButton Variant="Variant.Outlined" Style="border-radius: 16px; height: 40px" FullWidth>
+		<MudButton Variant="Variant.Outlined" OnClick="GoToLogin" Style="border-radius: 16px; height: 40px" FullWidth>
 			Вход
 		</MudButton>
 	</div>
 </div>
+
+<style>
+
+</style>
 
 

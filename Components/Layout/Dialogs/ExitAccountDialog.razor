@@ -1,0 +1,27 @@
+﻿@using WenawoMessenger.Client.Services.LocalStorage
+@inject NavigationManager _navigation
+@inject IUserStorageService _userStorageService
+
+<MudDialog>
+	<DialogContent>
+		Вы уверены, что хотите выйти?
+	</DialogContent>
+	<DialogActions>
+		<MudButton OnClick="Cancel">Отмена</MudButton>
+		<MudButton Color="Color.Primary" OnClick="ExitAccount">Выход</MudButton>
+	</DialogActions>
+</MudDialog>
+
+@code {
+
+	[CascadingParameter]
+	private MudDialogInstance MudDialog { get; set; } = null!;
+
+	public void ExitAccount()
+	{
+		_userStorageService.Delete();
+		_navigation.NavigateTo("login", replace: true);
+	}
+
+	private void Cancel() => MudDialog.Cancel();
+}
